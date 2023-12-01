@@ -1,0 +1,9 @@
+<div class="container largo">
+  <ul>
+    <div *ngFor="let item of items">
+      <li *ngIf="item.completed">
+        {{ item.title }}
+      </li>
+    </div>
+  </ul>
+</div>

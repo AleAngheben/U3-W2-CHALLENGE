@@ -1,0 +1,45 @@
+<!-- lista -->
+<div class="container">
+  <ul>
+    <div *ngIf="items[0]; else noContent">
+      <div *ngFor="let item of items">
+        <li *ngIf="!item.completed">
+          {{ item.title }}
+
+          <button
+            class="btn border-0 text-bg-success rounded-0"
+            (click)="changeStatus(item)"
+          >
+            <i class="bi bi-check-lg"></i>
+          </button>
+        </li>
+      </div>
+    </div>
+    <ng-template #noContent
+      ><span class="fs-2"
+        >Non ci sono elementi nella lista...</span
+      ></ng-template
+    >
+  </ul>
+
+  <!-- input -->
+  <div class="input-group mb-3">
+    <input
+      [(ngModel)]="inputValue"
+      type="text"
+      class="form-control"
+      placeholder="Cosa devi fare?"
+      aria-label="Recipient's username"
+      aria-describedby="button-addon2"
+    />
+    <button
+      class="btn btn-outline-secondary text-bg-info"
+      type="button"
+      id="button-addon2"
+      (click)="addElement()"
+    >
+      <i class="bi bi-plus fs-4"></i>
+    </button>
+  </div>
+  <div></div>
+</div>
